@@ -6,8 +6,11 @@
     
 }
 body{
-    background-color: #24638e;  
+    background-color: #1f628e;  
 }
+
+        /* NAVBAR */
+
 .navbar{
     border: 3px solid #c2ac38;
     border-radius: 1rem;
@@ -15,12 +18,13 @@ body{
     height: 6rem;
     background-color: #023047;
     position: fixed;
+    z-index: 1;
 }
 .navbar:hover{
     border: 3px solid #f6fff8;
 }
 
-ul{
+.desktop-ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +43,7 @@ ul li a:hover{
 .logo{
     width: 4rem;
     height: 4rem;
-
+    margin: 1rem;
 }
 .signup{
     width: 25rem;
@@ -56,14 +60,284 @@ ul li a:hover{
     color: #c2ac38;
     border: 2px solid #f6fff8;
 }
+
+.menu-btn {
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  color: #e8cc43;
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  z-index: 2;
+}
+
+.sidebar {
+  
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #023047;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 100px;
+  z-index: 2;
+}
+
+.sidebar a {
+  padding: 15px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f6fff8;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover{
+  color: #c2ac38;
+}
+
+    /* LANDING */
+
+
 .landing-img{
     background-size: cover;
     margin-top: 3rem;
-    width: 50vw;
+    width: 50%;
     height: 95vh;
-    float: right;    
+    float: right;  
+    filter: drop-shadow(0px 0px 1px black);
 }
 .sub-head{
     font-size: 2rem;
-    color: #c2ac38;
+    color: #e8cc43;
+    position: relative;
+    width: 50%;
+    top: 12rem;
+    left: 2rem;
+    filter: drop-shadow(0px 0px 10px black);
+}
+.head{
+    font-size: 3rem;
+    color: #f6fff8;
+    position: relative;
+    width: 50%;
+    top: 12rem;
+    left: 2rem;
+    filter: drop-shadow(0px 0px 10px black);
+    z-index: 0;
+}
+.section1, .section2 {
+  display: flex;
+  filter: drop-shadow(0px 0px 10px black);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  position: relative;
+  top: 10rem;
+}
+
+.demo21, .sir1, .para1, .para2 {
+  width: 45%;
+  position: relative;
+  margin: 1rem;
+}
+
+.para1, .para2 {
+  color: #f6fff8;
+  font-size: 1.8rem;
+}
+      /* FOOTER */
+
+
+.footer{
+  width: 100%;
+  height: 40vh;
+  background-color: #023047;
+  position: relative;
+  top: 15rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.footer img{
+  margin: 0 1rem 0 1rem;
+}
+.img1{
+  width: 7rem;
+  height: 7rem;
+}
+.img2{
+  width: 12rem;
+  height: 12rem;
+}
+.img3{
+  width: 7rem;
+  height: 7rem;
+}
+.img4{
+  width: 7rem;
+  height: 7rem;
+}
+.copyright{
+  background-color: #000011;
+  color: #f6fff8;
+  display: flex;
+  text-align: center;
+  height: 2rem;
+  align-items: center;
+  position: relative;
+  top: 15rem;
+}
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+  .navbar {
+      height: 4rem;
+  }
+  ul li a {
+      display: none;
+  }
+  .logo {
+      width: 3rem;
+      height: 3rem;
+      position: relative;
+      left: 3rem;
+      bottom: 0.5rem;
+  }
+  .signup {
+      width: 10rem;
+      height: 3rem;
+      position: relative;
+      bottom: 0.5rem;
+  }
+  .landing-img {
+      width: 100%;
+      height: 70vh;
+      opacity: 0.6;
+      position: relative;
+      top: 5rem;
+  }
+  .sub-head {
+      font-size: 2rem;
+      position: relative;
+      top: -24rem;
+  }
+  .head {
+      font-size: 2.5rem;
+      position: relative;
+      top: -23rem;
+  }
+  .menu-btn {
+      display: block;
+  }
+  .sidebar-button {
+      display: block;
+      width: 1rem;
+  }
+
+  /* Footer adjustments for mobile devices */
+  .footer {
+      flex-direction: column;
+  }
+  .footer img {
+      width: 4rem;
+      height: 4rem;
+      margin: 0.5rem;
+  }
+  .img2 {
+      width: 6rem;
+      height: 6rem;
+  }
+  .copyright {
+      height: auto;
+      padding: 0.5rem 0;
+  }
+
+  /* Adjustments for smaller screens */
+  .demo21, .sir1, .para1, .para2 {
+      width: 90%;
+      margin-left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      text-align: center;
+  }
+
+  .section1, .section2 {
+      flex-direction: column;
+  }
+
+  .sir1 {
+      order: -1; /* Position image above paragraph */
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 769px) and (max-width: 1025px) {
+  .navbar {
+      height: 5rem;
+  }
+  .logo {
+      width: 4rem;
+      height: 4rem;
+  }
+  .signup {
+      width: 25rem;
+      height: 3rem;
+  }
+  .landing-img {
+      width: 100%;
+      height: 70vh;
+      opacity: 0.6;
+  }
+  .sub-head {
+      font-size: 3.5rem;
+      position: relative;
+      top: -30rem;
+  }
+  .head {
+      font-size: 4.5rem;
+      position: relative;
+      top: -27rem;
+  }
+
+  /* Footer adjustments for tablet devices */
+  .footer .img1, .img3, .img4 {
+      width: 7rem;
+      height: 7rem;
+  }
+  .img2 {
+      width: 10rem;
+      height: 10rem;
+  }
+
+  /* Adjustments for tablet screens */
+  .demo21, .sir1, .para1, .para2 {
+      width: 90%;
+      top: 0;
+      font-size: 1.6rem;
+      text-align: center;
+  }
+
+  .section1, .section2 {
+      flex-direction: column;
+  }
+
+  .sir1 {
+      order: -1; /* Position image above paragraph */
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1026px) {
+  .demo21, .sir1, .para1, .para2 {
+      width: 45%;
+      top: 0;
+      font-size: 1.8rem;
+  }
 }
